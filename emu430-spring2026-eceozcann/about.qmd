@@ -1,0 +1,26 @@
+---
+title: "About Me"
+sidebar: false 
+---
+
+# Education
+
+-   B.S., Industrial Engineering, Hacettepe University, Turkey, 2022 - ongoing.
+
+# Work Experience
+
+## Internships
+
+1.  TUSAŞ (Türk Havacılık Uzay Sanayii A.Ş.), Candidate Engineer, 2025 - ongoing
+
+2.  TUSAŞ (Türk Havacılık Uzay Sanayii A.Ş.), Intern, 2025
+
+3.  ASTOR A.Ş., Intern, 2025
+
+# Projects
+
+1.  Graduation Project (2025 - ongoing): Indoor Material Handling Optimization: Selected for the TUSAŞ LIFT UP Industry-Oriented Graduation Project Program. Currently modeling and optimizing indoor material transportation flows to minimize lead times and operational costs. Developing a logistic framework to improve internal part movement efficiency through mathematical modeling and system design.
+
+# Competencies
+
+R, Quarto, Git, Python, AutoCAD, MS Office, MS Project
