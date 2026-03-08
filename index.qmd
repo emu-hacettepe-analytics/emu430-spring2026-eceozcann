@@ -1,5 +1,5 @@
 ---
-title: "Welcome to My Analytics Lab"
+title: "Ece Ozcan"
 sidebar: false 
 ---
 
