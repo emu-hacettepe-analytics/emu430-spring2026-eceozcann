@@ -1,0 +1,90 @@
+---
+title: "Assignment 1"
+---
+
+# Assignment 1
+
+My first assignment has two parts.
+
+## (a)
+
+## (b)
+
+```{r}
+library(dslabs)
+data("polls_us_election_2016")
+```
+
+```{r}
+my_first <- "Ece"
+my_birth_year <- 2004
+```
+
+```{r}
+k <- (nchar(my_first) + my_birth_year) %% 15 + 8
+k
+```
+
+```{r}
+if (k %% 2 == 0) {
+  head(polls_us_election_2016, k)
+} else {
+  tail(polls_us_election_2016, k)
+}
+```
+
+```{r}
+total_na <- sum(is.na(polls_us_election_2016))
+cat("Total number of NA's in the dataset:", total_na, "\n\n")
+```
+
+```{r}
+total_na <- sum(is.na(polls_us_election_2016))
+cat("Total number of NA values in the dataset:", total_na, "\n")
+```
+
+```{r}
+na_per_col <- colSums(is.na(polls_us_election_2016))
+
+cat("Columns with the highest number of NA values:\n")
+head(sort(na_per_col, decreasing = TRUE), 8)
+```
+
+```{r}
+new_data <- polls_us_election_2016
+```
+
+```{r}
+for(col in names(new_data)){
+
+  if(is.numeric(new_data[[col]])){
+    
+    new_data[[col]][is.na(new_data[[col]])] <- my_birth_year + k
+    
+  } else {
+    
+    new_data[[col]] <- as.character(new_data[[col]])
+    new_data[[col]][is.na(new_data[[col]])] <- paste0(my_first, "_", k)
+    
+  }
+}
+```
+
+```{r}
+cat("View of the new dataset with k rows:\n")
+
+if (k %% 2 == 0) {
+  head(new_data, k)
+} else {
+  tail(new_data, k)
+}
+```
+
+```{r}
+remaining_na <- sum(is.na(new_data))
+cat("Total number of NA values in the new dataset:", remaining_na, "\n")
+```
+
+```{r}
+anyNA(new_data)
+```

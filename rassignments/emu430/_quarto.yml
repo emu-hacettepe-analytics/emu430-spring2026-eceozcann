@@ -1,0 +1,61 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Ece Ozcan's Analytics Lab"
+
+  navbar:
+    background: primary
+    foreground: white
+    search: true
+
+    left:
+      - text: Home
+        href: index.qmd
+      - text: About Me
+        href: about.qmd
+      - text: My Posts
+        href: posts.qmd
+      - text: EMU430 Coursework
+        menu:
+          - text: Assignments
+            href: assignments.qmd
+          - text: Project
+            href: project.qmd
+
+    right:
+      - icon: github
+        href: https://github.com/eceozcann
+      - icon: linkedin
+        href: https://www.linkedin.com/in/ece-özlem-özcan-7b6485255/
+
+  sidebar:
+    - title: "Assignments"
+      style: "docked"
+      search: true
+      contents:
+        - assignments.qmd
+        - assignments/assignment-1.qmd
+        - assignments/assignment-2.qmd
+
+  page-navigation: true
+  back-to-top-navigation: true
+
+  page-footer:
+    center: "Hacettepe University • Industrial Engineering • EMU430"
+    background: dark
+    foreground: white
+
+format:
+  html:
+    toc: true
+    toc-location: left
+
+    theme:
+      light: flatly
+      dark: cyborg
+
+    css: styles.css
+
+editor: visual

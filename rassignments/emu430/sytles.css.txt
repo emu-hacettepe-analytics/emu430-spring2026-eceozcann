@@ -1,0 +1,37 @@
+/* Navbar */
+.navbar {
+  font-size: 18px;
+}
+
+/* Başlık renkleri */
+h1, h2, h3 {
+  color: #6c63ff;
+  font-weight: bold;
+}
+
+/* Link hover efekti */
+a:hover {
+  color: #ff4d8d;
+  text-decoration: underline;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #f7f7ff;
+}
+
+/* Kart hover efekti */
+.quarto-grid-item {
+  border-radius: 12px;
+  padding: 10px;
+  transition: transform 0.2s ease;
+}
+
+.quarto-grid-item:hover {
+  transform: scale(1.03);
+}
+
+/* Footer */
+footer {
+  font-size: 14px;
+}
