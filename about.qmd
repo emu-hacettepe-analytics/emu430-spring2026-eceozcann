@@ -25,4 +25,4 @@ sidebar: false
 
 R, Quarto, Git, Python, AutoCAD, MS Office, MS Project
 
-\[Click to see CV\] (files/CV - Ece Özlem ÖZCAN.pdf)
+[\[Click to download my CV!\]](CV.pdf)
