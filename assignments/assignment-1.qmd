@@ -4,27 +4,43 @@ title: "Assignment 1"
 
 # Assignment 1
 
-```{r}
-1 + 1
-```
+My first assignment has three parts.
 
-My first assignment has two parts.
+## (a) Brief Summary
 
-## (a)
+Cem Vardar begins his talk by emphasizing the importance of self awareness. He says that understanding whether a person is more introverted or extroverted can strongly affect their academic and professional life. According to him, people can realize early on which fields increase their productivity and which ones drain their energy.
 
-## (b)
+He then explains engineering as solving problems to improve people’s lives by using science and mathematics. He highlights that what makes engineers different from people who solve problems in daily life is their use of scientific and mathematical tools.
+
+While discussing the idea of “if it works don’t touch it”, he explains that rebuilding a system from scratch often fails because small but important parts of the system can be overlooked. Instead, improving systems with small changes step by step is usually more effective.
+
+Vardar also describes modern data scientists as an evolved version of statisticians and econometricians. He compares data scientists to carpenters and data to the tools they use. He explains that industrial engineers turn raw data into useful information and help companies make better decisions, giving examples from the company he works for, Carvana.
+
+Finally, he supports the Pareto principle and suggests focusing on the small portion of knowledge that brings the most benefit. He also says that artificial intelligence is very useful for automation but humans will still be needed because defining problems requires human thinking.
+
+## (b) Questions
+
+**Question 1** - *Open-Ended*: Why does Cem Vardar think artificial intelligence cannot fully replace human engineers in complex systems?
+
+**Question 2** - *Multiple Choice*: According to Cem Vardar, which of the following is NOT a type of role in data analytics or data science?
+
+A\) Predictive Modeling\
+B) Operations Research\
+C) Machine Learning Engineering\
+D) Generalist Data Science\
+E) Front-End UI/UX Development
+
+Answers are at the end of this page.
+
+## (c)
 
 ```{r}
 library(dslabs)
 data("polls_us_election_2016")
-```
 
-```{r}
 my_first <- "Ece"
-my_birth_year <- 2002 
-```
+my_birth_year <- 2004
 
-```{r}
 k <- (nchar(my_first) + my_birth_year) %% 15 + 8
 ```
 
@@ -43,8 +59,8 @@ cat("Total number of NA's in the dataset:", total_na, "\n\n")
 
 ```{r}
 na_per_col <- colSums(is.na(polls_us_election_2016))
-print("First 8 columns that contains the most NA's:")
-head(sort(na_per_col, decreasing = TRUE), 8)
+cat("First 8 columns that contain the most NA's:\n")
+print(head(sort(na_per_col, decreasing = TRUE), 8))
 ```
 
 ```{r}
@@ -53,18 +69,29 @@ new_data <- polls_us_election_2016
 
 ```{r}
 for(col in names(new_data)){
+  
   if(is.numeric(new_data[[col]])){
-    # Sayısal sütunlar için: Doğum yılı + k
+    
+    # For numeric columns: fill with (birth year + k)
     new_data[[col]][is.na(new_data[[col]])] <- my_birth_year + k
-  } else if(is.character(new_data[[col]]) | is.factor(new_data[[col]])){
-    # Karakter/Faktör sütunları için: İsim + k
-    new_data[[col]][is.na(new_data[[col]])] <- paste0(my_first, "", k)
+    
+  } else {
+    
+    # Convert factor/character to character first
+    new_data[[col]] <- as.character(new_data[[col]])
+    
+    # Fill NA with (name + k)
+    new_data[[col]][is.na(new_data[[col]])] <- paste0(my_first, k)
+    
+    # Convert back to factor (optional)
+    new_data[[col]] <- as.factor(new_data[[col]])
   }
 }
 ```
 
 ```{r}
-cat("\nYeni veri setinin k satırlık görünümü:\n")
+cat("\nPreview of the updated dataset (k rows):\n")
+
 if (k %% 2 == 0) {
   print(head(new_data, k))
 } else {
@@ -74,10 +101,18 @@ if (k %% 2 == 0) {
 
 ```{r}
 kalan_na <- sum(is.na(new_data))
-cat("\nYeni veri setindeki toplam NA sayısı:", kalan_na, "\n")
+cat("\nTotal NA values in the updated dataset:", kalan_na, "\n")
+
+cat("Are there any NA values left? ")
+print(anyNA(new_data))
 ```
 
-```{r}
-cat("Veri setinde hiç NA kaldı mı? ")
-anyNA(new_data)
-```
+## Answers
+
+**Question 1:** According to Cem Vardar, AI can automate tasks and optimize within given rules, but it cannot define problems or understand complex real world situations as well as humans.
+
+**Question 2:** The correct answer is E, because Front-End UI/UX Development is more related to interface design and is further from data analytics than the other options.
+
+## Notes
+
+I took AI's help to form some of the code snippets and validate my answers to see if they are true.
