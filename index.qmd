@@ -1,12 +1,10 @@
 ---
-title: "Ece Ozcan"
+title: "Ece Özcan"
 sidebar: false 
 ---
 
-Hello! My name is Ece Ozcan.
+Hello! My name is Ece Özcan.
 
 This is my personal webpage.
 
 Please stay tuned to follow my works on data analytics, blog posts, and more.
-
-This is our template.
